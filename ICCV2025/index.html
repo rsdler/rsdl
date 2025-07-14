@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to SkyDiffusion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #005580;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    iframe {
+      width: 90%;
+      height: 800px;
+      border: 1px solid #ccc;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SkyDiffusion Project</h1>
+  <p>Click the button below to load the ICCV 2025 project introduction.</p>
+  <button onclick="loadContent()">Load SkyDiffusion Intro</button>
+
+  <div id="viewer"></div>
+
+  <script>
+    function loadContent() {
+      document.getElementById("viewer").innerHTML = `
+        <iframe src="SkyDiffusion.html"></iframe>
+      `;
+    }
+  </script>
+
+</body>
+</html>

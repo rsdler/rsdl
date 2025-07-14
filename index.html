@@ -49,11 +49,12 @@
       font-size: 0.9rem;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       gap: 2rem;
-      padding: 3rem 4%;
+      padding: 2rem 4%;
       max-width: 1200px;
       margin: auto;
     }
@@ -66,6 +67,8 @@
       box-shadow: var(--shadow);
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+      flex: 1 1 220px;
+      max-width: 240px;
     }
 
     .card:hover {
@@ -91,6 +94,10 @@
       .lang-toggle {
         margin-top: 1rem;
       }
+      .card {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -103,8 +110,8 @@
     </div>
   </header>
 
-  <main class="container" id="menu">
-    <!-- 第一行：论文类 -->
+  <!-- 第一行：论文类 -->
+  <div class="section">
     <div class="card" onclick="goTo('conference.html')">
       <img src="assets/icons/conference.svg" alt="会议论文">
       <div class="card-title" data-zh="会议论文" data-en="Conference Papers">会议论文</div>
@@ -121,25 +128,31 @@
       <img src="assets/icons/category.svg" alt="论文分类合集">
       <div class="card-title" data-zh="论文分类合集" data-en="Topic Collections">论文分类合集</div>
     </div>
+  </div>
 
-    <!-- 第二行：技术实践 -->
+  <!-- 第二行：技术实践 -->
+  <div class="section">
     <div class="card" onclick="goTo('practice.html')">
       <img src="assets/icons/practice.svg" alt="技术实践">
       <div class="card-title" data-zh="技术实践" data-en="Technical Practice">技术实践</div>
     </div>
+  </div>
 
-    <!-- 第三行：遥感数据 -->
+  <!-- 第三行：遥感数据 -->
+  <div class="section">
     <div class="card" onclick="goTo('data.html')">
       <img src="assets/icons/data.svg" alt="遥感数据">
       <div class="card-title" data-zh="遥感数据" data-en="Remote Sensing Data">遥感数据</div>
     </div>
+  </div>
 
-    <!-- 第四行：其它资源 -->
+  <!-- 第四行：其它资源 -->
+  <div class="section">
     <div class="card" onclick="goTo('others.html')">
       <img src="assets/icons/others.svg" alt="其它资源">
       <div class="card-title" data-zh="其它资源" data-en="Other Resources">其它资源</div>
     </div>
-  </main>
+  </div>
 
   <script>
     function switchLang(lang) {

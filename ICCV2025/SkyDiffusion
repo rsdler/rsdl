@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkyDiffusion: ICCV 2025 Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #005580;
+    }
+    h2 {
+      color: #006699;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SkyDiffusion: Sky-Aware Generative Learning for Photorealistic Outdoor Image Synthesis</h1>
+  <div class="section">
+    <strong>Conference:</strong> ICCV 2025 (Submitted)
+  </div>
+
+  <div class="section">
+    <h2>Project Page</h2>
+    <p><a href="https://skydiffusion.github.io" target="_blank">https://skydiffusion.github.io</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Abstract</h2>
+    <p>
+      Recent advances in diffusion models have enabled high-quality image synthesis, yet synthesizing realistic outdoor scenes with diverse, controllable, and consistent sky appearances remains challenging.
+      This paper introduces <strong>SkyDiffusion</strong>, a novel generative framework that infuses physical knowledge of sky illumination into the generative process of outdoor scene synthesis.
+      Specifically, we propose a <em>Sky-Aware Representation</em> that compactly encodes high-level features of sky appearance, such as time of day, cloud patterns, and weather conditions.
+      We then integrate this representation into both unconditional and conditional diffusion backbones through a <em>Sky Consistency Guidance</em> module, which enforces sky-scene coherence during the generation.
+      To train and evaluate SkyDiffusion, we construct <strong>Sky360</strong>, a large-scale dataset of outdoor 360° panoramas annotated with sky properties derived from physical models and expert labeling.
+      Extensive experiments demonstrate that SkyDiffusion generates more photorealistic and controllable outdoor images compared to state-of-the-art methods, while ensuring sky-scene consistency under diverse sky conditions.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Key Contributions</h2>
+    <ul>
+      <li>We introduce SkyDiffusion, the first diffusion-based model that explicitly incorporates sky-aware cues for outdoor image synthesis.</li>
+      <li>We propose a compact Sky-Aware Representation and a novel Sky Consistency Guidance mechanism for enhancing generation realism and consistency.</li>
+      <li>We curate Sky360, a new dataset containing over 100K annotated outdoor panoramas with rich sky metadata.</li>
+      <li>SkyDiffusion outperforms prior state-of-the-art in outdoor image generation quality, diversity, and sky controllability.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://skydiffusion.github.io" target="_blank">Project Website</a></li>
+      <li><a href="https://arxiv.org/abs/2507.01234" target="_blank">arXiv Preprint</a></li>
+      <li><a href="https://github.com/skydiffusion/skydiffusion" target="_blank">Code (GitHub)</a></li>
+      <li><a href="https://huggingface.co/skydiffusion" target="_blank">Model on HuggingFace</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>

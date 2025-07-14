@@ -104,6 +104,7 @@
   </header>
 
   <main class="container" id="menu">
+    <!-- 第一行：论文类 -->
     <div class="card" onclick="goTo('conference.html')">
       <img src="assets/icons/conference.svg" alt="会议论文">
       <div class="card-title" data-zh="会议论文" data-en="Conference Papers">会议论文</div>
@@ -120,20 +121,30 @@
       <img src="assets/icons/category.svg" alt="论文分类合集">
       <div class="card-title" data-zh="论文分类合集" data-en="Topic Collections">论文分类合集</div>
     </div>
+
+    <!-- 第二行：技术实践 -->
     <div class="card" onclick="goTo('practice.html')">
       <img src="assets/icons/practice.svg" alt="技术实践">
       <div class="card-title" data-zh="技术实践" data-en="Technical Practice">技术实践</div>
     </div>
+
+    <!-- 第三行：遥感数据 -->
     <div class="card" onclick="goTo('data.html')">
       <img src="assets/icons/data.svg" alt="遥感数据">
       <div class="card-title" data-zh="遥感数据" data-en="Remote Sensing Data">遥感数据</div>
+    </div>
+
+    <!-- 第四行：其它资源 -->
+    <div class="card" onclick="goTo('others.html')">
+      <img src="assets/icons/others.svg" alt="其它资源">
+      <div class="card-title" data-zh="其它资源" data-en="Other Resources">其它资源</div>
     </div>
   </main>
 
   <script>
     function switchLang(lang) {
-      const title = document.getElementById('title');
-      title.innerText = lang === 'zh' ? '遥感与深度学习' : 'Remote Sensing & Deep Learning';
+      document.getElementById('title').innerText = 
+        lang === 'zh' ? '遥感与深度学习' : 'Remote Sensing & Deep Learning';
 
       document.querySelectorAll('.card-title').forEach(el => {
         el.innerText = el.dataset[lang];

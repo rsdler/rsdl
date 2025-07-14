@@ -5,101 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>遥感与深度学习</title>
   <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --bg-color: #ffffff;
+      --card-bg: #f9f9f9;
+      --text-color: #333;
+      --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      --radius: 16px;
+    }
+
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #fff;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
+
     header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-color: #f8f9fa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4%;
       border-bottom: 1px solid #eee;
+      background-color: #fafafa;
     }
-    h1 {
-      margin: 0;
+
+    header h1 {
       font-size: 2rem;
-      color: #222;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin: 0;
     }
-    .lang-toggle {
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
+
+    .lang-toggle button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: none;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
+
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 3rem 4%;
       max-width: 1200px;
       margin: auto;
     }
+
     .card {
-      background: #fefefe;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
+
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0px 12px 24px rgba(0,0,0,0.1);
     }
+
     .card img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 0.5rem;
+      height: 60px;
+      margin-bottom: 1rem;
     }
+
     .card-title {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .lang-toggle {
+        margin-top: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="lang-toggle">
-    <button onclick="switchLang('zh')">中文</button> |
-    <button onclick="switchLang('en')">EN</button>
-  </div>
-
   <header>
     <h1 id="title">遥感与深度学习</h1>
+    <div class="lang-toggle">
+      <button onclick="switchLang('zh')">中文</button>
+      <button onclick="switchLang('en')">English</button>
+    </div>
   </header>
 
   <main class="container" id="menu">
     <div class="card" onclick="goTo('conference.html')">
-      <img src="icons/conference.png" alt="会议论文" />
+      <img src="assets/icons/conference.svg" alt="会议论文">
       <div class="card-title" data-zh="会议论文" data-en="Conference Papers">会议论文</div>
     </div>
     <div class="card" onclick="goTo('journal.html')">
-      <img src="icons/journal.png" alt="期刊论文" />
+      <img src="assets/icons/journal.svg" alt="期刊论文">
       <div class="card-title" data-zh="期刊论文" data-en="Journal Papers">期刊论文</div>
     </div>
     <div class="card" onclick="goTo('arxiv.html')">
-      <img src="icons/arxiv.png" alt="arxiv最新论文" />
+      <img src="assets/icons/arxiv.svg" alt="arxiv最新论文">
       <div class="card-title" data-zh="arxiv最新论文" data-en="Latest on arXiv">arxiv最新论文</div>
     </div>
     <div class="card" onclick="goTo('categories.html')">
-      <img src="icons/category.png" alt="论文分类合集" />
-      <div class="card-title" data-zh="论文分类合集" data-en="Paper Collections">论文分类合集</div>
+      <img src="assets/icons/category.svg" alt="论文分类合集">
+      <div class="card-title" data-zh="论文分类合集" data-en="Topic Collections">论文分类合集</div>
     </div>
     <div class="card" onclick="goTo('practice.html')">
-      <img src="icons/practice.png" alt="技术实践" />
+      <img src="assets/icons/practice.svg" alt="技术实践">
       <div class="card-title" data-zh="技术实践" data-en="Technical Practice">技术实践</div>
     </div>
     <div class="card" onclick="goTo('data.html')">
-      <img src="icons/data.png" alt="遥感数据" />
+      <img src="assets/icons/data.svg" alt="遥感数据">
       <div class="card-title" data-zh="遥感数据" data-en="Remote Sensing Data">遥感数据</div>
     </div>
   </main>
 
   <script>
     function switchLang(lang) {
-      document.getElementById('title').innerText = lang === 'zh' ? '遥感与深度学习' : 'Remote Sensing & Deep Learning';
+      const title = document.getElementById('title');
+      title.innerText = lang === 'zh' ? '遥感与深度学习' : 'Remote Sensing & Deep Learning';
+
       document.querySelectorAll('.card-title').forEach(el => {
         el.innerText = el.dataset[lang];
       });
